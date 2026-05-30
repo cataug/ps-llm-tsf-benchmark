@@ -1,4 +1,4 @@
-````md
+
 # PS-LLM TSF Benchmark
 
 Pattern- and Semantics-Augmented LLM Benchmark for multivariate time series forecasting.
