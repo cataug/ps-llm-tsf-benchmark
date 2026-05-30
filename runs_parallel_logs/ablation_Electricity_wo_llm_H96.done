@@ -1,0 +1,4 @@
+done=2026-05-30T20:00:15.078378
+name=ablation_Electricity_wo_llm_H96
+expected_result=runs_icdm_psllm_parallel/ablation/wo_llm/main_Electricity_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem1_align1_gate1_llm0_fs1.0_noise0.0_seed42/result.json
+log=runs_parallel_logs/job_0097_ablation_Electricity_wo_llm_H96_gpu0.log

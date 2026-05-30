@@ -1,0 +1,73 @@
+
+========================================================================================================================
+RESTART_APPEND=2026-05-30T16:30:05.713423
+JOB_NO=0094
+MANIFEST_INDEX=93
+NAME=ablation_Electricity_wo_semantic_H96
+GPU=0
+EXPECTED_RESULT=runs_icdm_psllm_parallel/ablation/wo_semantic/main_Electricity_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem0_align0_gate0_llm1_fs1.0_noise0.0_seed42/result.json
+CMD=/home/tahiti/Malashin_Projects/.venv_a100/bin/python run_icdm_psllm.py --plan single --data_root data_icdm_tsf --hf_root /home/tahiti/Malashin_Projects/hf_models --out_dir runs_icdm_psllm_parallel/ablation/wo_semantic --task main --dataset Electricity --mode M --model psllm --llm_name qwen2p5_1p5b --semantic_encoder mlp --seq_len 96 --pred_len 96 --batch_size 2 --epochs 6 --patience 3 --d_model 128 --n_layers 2 --n_heads 4 --rank 64 --lr 0.001 --weight_decay 0.0001 --amp 1 --num_workers 0 --seed 42 --device auto --fewshot_ratio 1.0 --noise_std 0.0 --use_pattern 1 --use_semantic 0 --use_align 0 --use_gate 0 --use_llm 1 --max_train_batches -1 --max_eval_batches -1
+========================================================================================================================
+
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/338 [00:00<00:43,  7.74it/s]
+Loading weights:  14%|█▍        | 49/338 [00:00<00:01, 250.73it/s]
+Loading weights:  29%|██▉       | 99/338 [00:00<00:00, 347.87it/s]
+Loading weights:  43%|████▎     | 147/338 [00:00<00:00, 371.97it/s]
+Loading weights:  60%|██████    | 203/338 [00:00<00:00, 422.57it/s]
+Loading weights:  73%|███████▎  | 247/338 [00:00<00:00, 417.81it/s]
+Loading weights:  90%|████████▉ | 303/338 [00:00<00:00, 456.45it/s]
+Loading weights: 100%|██████████| 338/338 [00:00<00:00, 414.27it/s]
+========================================================================================================================
+RUN: main_Electricity_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem0_align0_gate0_llm1_fs1.0_noise0.0_seed42
+device: cuda
+data_root: data_icdm_tsf
+hf_root: /home/tahiti/Malashin_Projects/hf_models
+dataset: Electricity
+model: psllm
+llm: qwen2p5_1p5b
+semantic_encoder: mlp
+input_dim: 321 output_dim: 321
+params_total: 1554321793 params_trainable: 10607489
+batches train/val/test: 9110 1268 2583
+run_dir: runs_icdm_psllm_parallel/ablation/wo_semantic/main_Electricity_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem0_align0_gate0_llm1_fs1.0_noise0.0_seed42
+========================================================================================================================
+epoch 001 | train mse 0.279277 mae 0.372390 | val mse 0.248730 mae 0.350084
+epoch 002 | train mse 0.173406 mae 0.290515 | val mse 0.221406 mae 0.325400
+epoch 003 | train mse 0.149714 mae 0.270184 | val mse 0.218135 mae 0.320558
+epoch 004 | train mse 0.138073 mae 0.260031 | val mse 0.214386 mae 0.320254
+epoch 005 | train mse 0.130649 mae 0.253481 | val mse 0.215597 mae 0.319618
+epoch 006 | train mse 0.125682 mae 0.248973 | val mse 0.215163 mae 0.319849
+TEST RESULT
+{
+  "task": "main",
+  "dataset": "Electricity",
+  "model": "psllm",
+  "llm_name": "qwen2p5_1p5b",
+  "semantic_encoder": "mlp",
+  "mode": "M",
+  "seq_len": 96,
+  "pred_len": 96,
+  "input_dim": 321,
+  "output_dim": 321,
+  "use_pattern": 1,
+  "use_semantic": 0,
+  "use_align": 0,
+  "use_gate": 0,
+  "use_llm": 1,
+  "fewshot_ratio": 1.0,
+  "noise_std": 0.0,
+  "seed": 42,
+  "best_epoch": 4,
+  "test_mse": 0.2874393995319094,
+  "test_mae": 0.3711325222214571,
+  "test_nmae": 0.44677814578030245,
+  "params_total": 1554321793,
+  "params_trainable": 10607489,
+  "elapsed_sec": 10720.104378461838,
+  "run_dir": "runs_icdm_psllm_parallel/ablation/wo_semantic/main_Electricity_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem0_align0_gate0_llm1_fs1.0_noise0.0_seed42"
+}
+
+========================================================================================================================
+END=2026-05-30T19:29:04.636198
+RETURN_CODE=0

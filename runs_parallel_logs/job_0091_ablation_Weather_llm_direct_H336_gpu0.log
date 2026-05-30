@@ -1,0 +1,73 @@
+
+========================================================================================================================
+RESTART_APPEND=2026-05-30T13:48:08.027730
+JOB_NO=0091
+MANIFEST_INDEX=90
+NAME=ablation_Weather_llm_direct_H336
+GPU=0
+EXPECTED_RESULT=runs_icdm_psllm_parallel/ablation/llm_direct/main_Weather_model-llm_direct_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H336_pat0_sem0_align0_gate0_llm1_fs1.0_noise0.0_seed42/result.json
+CMD=/home/tahiti/Malashin_Projects/.venv_a100/bin/python run_icdm_psllm.py --plan single --data_root data_icdm_tsf --hf_root /home/tahiti/Malashin_Projects/hf_models --out_dir runs_icdm_psllm_parallel/ablation/llm_direct --task main --dataset Weather --mode M --model llm_direct --llm_name qwen2p5_1p5b --semantic_encoder mlp --seq_len 96 --pred_len 336 --batch_size 2 --epochs 6 --patience 3 --d_model 128 --n_layers 2 --n_heads 4 --rank 64 --lr 0.001 --weight_decay 0.0001 --amp 1 --num_workers 0 --seed 42 --device auto --fewshot_ratio 1.0 --noise_std 0.0 --use_pattern 0 --use_semantic 0 --use_align 0 --use_gate 0 --use_llm 1 --max_train_batches -1 --max_eval_batches -1
+========================================================================================================================
+
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/338 [00:00<00:34,  9.68it/s]
+Loading weights:  18%|█▊        | 60/338 [00:00<00:00, 325.38it/s]
+Loading weights:  29%|██▉       | 99/338 [00:00<00:00, 312.50it/s]
+Loading weights:  43%|████▎     | 147/338 [00:00<00:00, 347.20it/s]
+Loading weights:  58%|█████▊    | 195/338 [00:00<00:00, 367.32it/s]
+Loading weights:  72%|███████▏  | 243/338 [00:00<00:00, 392.45it/s]
+Loading weights:  86%|████████▋ | 292/338 [00:00<00:00, 416.87it/s]
+Loading weights: 100%|██████████| 338/338 [00:00<00:00, 408.48it/s]
+========================================================================================================================
+RUN: main_Weather_model-llm_direct_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H336_pat0_sem0_align0_gate0_llm1_fs1.0_noise0.0_seed42
+device: cuda
+data_root: data_icdm_tsf
+hf_root: /home/tahiti/Malashin_Projects/hf_models
+dataset: Weather
+model: llm_direct
+llm: qwen2p5_1p5b
+semantic_encoder: mlp
+input_dim: 21 output_dim: 21
+params_total: 1577142613 params_trainable: 33428309
+batches train/val/test: 18227 2468 5102
+run_dir: runs_icdm_psllm_parallel/ablation/llm_direct/main_Weather_model-llm_direct_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H336_pat0_sem0_align0_gate0_llm1_fs1.0_noise0.0_seed42
+========================================================================================================================
+epoch 001 | train mse 0.445208 mae 0.357720 | val mse 0.716394 mae 0.520913
+epoch 002 | train mse 0.334104 mae 0.284033 | val mse 0.721547 mae 0.529532
+epoch 003 | train mse 0.302415 mae 0.264157 | val mse 0.724316 mae 0.537988
+epoch 004 | train mse 0.286355 mae 0.254652 | val mse 0.707729 mae 0.521001
+epoch 005 | train mse 0.276150 mae 0.248350 | val mse 0.728795 mae 0.539143
+epoch 006 | train mse 0.269212 mae 0.243874 | val mse 0.725165 mae 0.532923
+TEST RESULT
+{
+  "task": "main",
+  "dataset": "Weather",
+  "model": "llm_direct",
+  "llm_name": "qwen2p5_1p5b",
+  "semantic_encoder": "mlp",
+  "mode": "M",
+  "seq_len": 96,
+  "pred_len": 336,
+  "input_dim": 21,
+  "output_dim": 21,
+  "use_pattern": 0,
+  "use_semantic": 0,
+  "use_align": 0,
+  "use_gate": 0,
+  "use_llm": 1,
+  "fewshot_ratio": 1.0,
+  "noise_std": 0.0,
+  "seed": 42,
+  "best_epoch": 4,
+  "test_mse": 0.45751908747169,
+  "test_mae": 0.4712031236767582,
+  "test_nmae": 0.8450248103613428,
+  "params_total": 1577142613,
+  "params_trainable": 33428309,
+  "elapsed_sec": 18825.079108953476,
+  "run_dir": "runs_icdm_psllm_parallel/ablation/llm_direct/main_Weather_model-llm_direct_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H336_pat0_sem0_align0_gate0_llm1_fs1.0_noise0.0_seed42"
+}
+
+========================================================================================================================
+END=2026-05-30T19:02:13.922683
+RETURN_CODE=0

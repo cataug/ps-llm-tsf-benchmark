@@ -1,0 +1,70 @@
+
+========================================================================================================================
+RESTART_APPEND=2026-05-30T12:12:20.544041
+JOB_NO=0087
+MANIFEST_INDEX=86
+NAME=ablation_Weather_wo_semantic_H336
+GPU=0
+EXPECTED_RESULT=runs_icdm_psllm_parallel/ablation/wo_semantic/main_Weather_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H336_pat1_sem0_align0_gate0_llm1_fs1.0_noise0.0_seed42/result.json
+CMD=/home/tahiti/Malashin_Projects/.venv_a100/bin/python run_icdm_psllm.py --plan single --data_root data_icdm_tsf --hf_root /home/tahiti/Malashin_Projects/hf_models --out_dir runs_icdm_psllm_parallel/ablation/wo_semantic --task main --dataset Weather --mode M --model psllm --llm_name qwen2p5_1p5b --semantic_encoder mlp --seq_len 96 --pred_len 336 --batch_size 2 --epochs 6 --patience 3 --d_model 128 --n_layers 2 --n_heads 4 --rank 64 --lr 0.001 --weight_decay 0.0001 --amp 1 --num_workers 0 --seed 42 --device auto --fewshot_ratio 1.0 --noise_std 0.0 --use_pattern 1 --use_semantic 0 --use_align 0 --use_gate 0 --use_llm 1 --max_train_batches -1 --max_eval_batches -1
+========================================================================================================================
+
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/338 [00:00<00:47,  7.08it/s]
+Loading weights:  33%|███▎      | 111/338 [00:00<00:00, 532.40it/s]
+Loading weights:  57%|█████▋    | 191/338 [00:00<00:00, 617.89it/s]
+Loading weights:  76%|███████▌  | 257/338 [00:00<00:00, 589.45it/s]
+Loading weights: 100%|██████████| 338/338 [00:00<00:00, 626.25it/s]
+========================================================================================================================
+RUN: main_Weather_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H336_pat1_sem0_align0_gate0_llm1_fs1.0_noise0.0_seed42
+device: cuda
+data_root: data_icdm_tsf
+hf_root: /home/tahiti/Malashin_Projects/hf_models
+dataset: Weather
+model: psllm
+llm: qwen2p5_1p5b
+semantic_encoder: mlp
+input_dim: 21 output_dim: 21
+params_total: 1577142613 params_trainable: 33428309
+batches train/val/test: 18227 2468 5102
+run_dir: runs_icdm_psllm_parallel/ablation/wo_semantic/main_Weather_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H336_pat1_sem0_align0_gate0_llm1_fs1.0_noise0.0_seed42
+========================================================================================================================
+epoch 001 | train mse 0.450754 mae 0.357519 | val mse 0.711377 mae 0.516135
+epoch 002 | train mse 0.325747 mae 0.274768 | val mse 0.700453 mae 0.510784
+epoch 003 | train mse 0.288530 mae 0.252192 | val mse 0.747795 mae 0.543557
+epoch 004 | train mse 0.271496 mae 0.241188 | val mse 0.709628 mae 0.519617
+epoch 005 | train mse 0.260649 mae 0.233925 | val mse 0.736438 mae 0.532978
+early stopping at epoch 5, best_epoch=2
+TEST RESULT
+{
+  "task": "main",
+  "dataset": "Weather",
+  "model": "psllm",
+  "llm_name": "qwen2p5_1p5b",
+  "semantic_encoder": "mlp",
+  "mode": "M",
+  "seq_len": 96,
+  "pred_len": 336,
+  "input_dim": 21,
+  "output_dim": 21,
+  "use_pattern": 1,
+  "use_semantic": 0,
+  "use_align": 0,
+  "use_gate": 0,
+  "use_llm": 1,
+  "fewshot_ratio": 1.0,
+  "noise_std": 0.0,
+  "seed": 42,
+  "best_epoch": 2,
+  "test_mse": 0.4504842289005341,
+  "test_mae": 0.4564572247902537,
+  "test_nmae": 0.8241854228162012,
+  "params_total": 1577142613,
+  "params_trainable": 33428309,
+  "elapsed_sec": 15445.637678861618,
+  "run_dir": "runs_icdm_psllm_parallel/ablation/wo_semantic/main_Weather_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H336_pat1_sem0_align0_gate0_llm1_fs1.0_noise0.0_seed42"
+}
+
+========================================================================================================================
+END=2026-05-30T16:30:05.636706
+RETURN_CODE=0

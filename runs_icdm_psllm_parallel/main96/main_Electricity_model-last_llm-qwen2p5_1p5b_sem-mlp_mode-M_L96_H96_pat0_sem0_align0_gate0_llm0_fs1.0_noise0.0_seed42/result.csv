@@ -1,0 +1,2 @@
+task,dataset,model,llm_name,semantic_encoder,mode,seq_len,pred_len,input_dim,output_dim,use_pattern,use_semantic,use_align,use_gate,use_llm,fewshot_ratio,noise_std,seed,best_epoch,test_mse,test_mae,test_nmae,params_total,params_trainable,elapsed_sec,run_dir
+main,Electricity,last,qwen2p5_1p5b,mlp,M,96,96,321,321,0,0,0,0,0,1.0,0.0,42,-1,1.5877032607413057,0.9454044649825278,1.1420653672928,0,0,51.958507776260376,runs_icdm_psllm_parallel/main96/main_Electricity_model-last_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat0_sem0_align0_gate0_llm0_fs1.0_noise0.0_seed42

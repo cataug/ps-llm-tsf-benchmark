@@ -1,0 +1,75 @@
+
+========================================================================================================================
+RESTART_APPEND=2026-05-29T21:31:19.521608
+JOB_NO=0041
+MANIFEST_INDEX=40
+NAME=main96_Traffic_llm_direct_H96
+GPU=0
+EXPECTED_RESULT=runs_icdm_psllm_parallel/main96/main_Traffic_model-llm_direct_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat0_sem0_align0_gate0_llm1_fs1.0_noise0.0_seed42/result.json
+CMD=/home/tahiti/Malashin_Projects/.venv_a100/bin/python run_icdm_psllm.py --plan single --data_root data_icdm_tsf --hf_root /home/tahiti/Malashin_Projects/hf_models --out_dir runs_icdm_psllm_parallel/main96 --task main --dataset Traffic --mode M --model llm_direct --llm_name qwen2p5_1p5b --semantic_encoder mlp --seq_len 96 --pred_len 96 --batch_size 2 --epochs 6 --patience 3 --d_model 128 --n_layers 2 --n_heads 4 --rank 64 --lr 0.001 --weight_decay 0.0001 --amp 1 --num_workers 0 --seed 42 --device auto --fewshot_ratio 1.0 --noise_std 0.0 --use_pattern 0 --use_semantic 0 --use_align 0 --use_gate 0 --use_llm 1 --max_train_batches -1 --max_eval_batches -1
+========================================================================================================================
+
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/338 [00:00<00:44,  7.58it/s]
+Loading weights:  19%|█▊        | 63/338 [00:00<00:00, 313.84it/s]
+Loading weights:  29%|██▉       | 99/338 [00:00<00:00, 327.05it/s]
+Loading weights:  42%|████▏     | 143/338 [00:00<00:00, 361.42it/s]
+Loading weights:  54%|█████▍    | 183/338 [00:00<00:00, 355.87it/s]
+Loading weights:  68%|██████▊   | 231/338 [00:00<00:00, 370.62it/s]
+Loading weights:  80%|███████▉  | 269/338 [00:00<00:00, 372.26it/s]
+Loading weights:  94%|█████████▍| 317/338 [00:00<00:00, 394.29it/s]
+Loading weights: 100%|██████████| 338/338 [00:00<00:00, 369.30it/s]
+========================================================================================================================
+RUN: main_Traffic_model-llm_direct_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat0_sem0_align0_gate0_llm1_fs1.0_noise0.0_seed42
+device: cuda
+data_root: data_icdm_tsf
+hf_root: /home/tahiti/Malashin_Projects/hf_models
+dataset: Traffic
+model: llm_direct
+llm: qwen2p5_1p5b
+semantic_encoder: mlp
+input_dim: 862 output_dim: 862
+params_total: 1555741918 params_trainable: 12027614
+batches train/val/test: 6044 830 1707
+run_dir: runs_icdm_psllm_parallel/main96/main_Traffic_model-llm_direct_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat0_sem0_align0_gate0_llm1_fs1.0_noise0.0_seed42
+========================================================================================================================
+epoch 001 | train mse 0.385064 mae 0.370423 | val mse 0.601942 mae 0.383677
+epoch 002 | train mse 0.263469 mae 0.288240 | val mse 0.567166 mae 0.360478
+epoch 003 | train mse 0.239837 mae 0.270137 | val mse 0.531453 mae 0.337511
+epoch 004 | train mse 0.228049 mae 0.261029 | val mse 0.534717 mae 0.341654
+epoch 005 | train mse 0.219645 mae 0.254442 | val mse 0.540472 mae 0.348651
+epoch 006 | train mse 0.214084 mae 0.250407 | val mse 0.539808 mae 0.345726
+early stopping at epoch 6, best_epoch=3
+TEST RESULT
+{
+  "task": "main",
+  "dataset": "Traffic",
+  "model": "llm_direct",
+  "llm_name": "qwen2p5_1p5b",
+  "semantic_encoder": "mlp",
+  "mode": "M",
+  "seq_len": 96,
+  "pred_len": 96,
+  "input_dim": 862,
+  "output_dim": 862,
+  "use_pattern": 0,
+  "use_semantic": 0,
+  "use_align": 0,
+  "use_gate": 0,
+  "use_llm": 1,
+  "fewshot_ratio": 1.0,
+  "noise_std": 0.0,
+  "seed": 42,
+  "best_epoch": 3,
+  "test_mse": 0.6984106327052974,
+  "test_mae": 0.39150915628786875,
+  "test_nmae": 0.4931524721599746,
+  "params_total": 1555741918,
+  "params_trainable": 12027614,
+  "elapsed_sec": 9291.06227183342,
+  "run_dir": "runs_icdm_psllm_parallel/main96/main_Traffic_model-llm_direct_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat0_sem0_align0_gate0_llm1_fs1.0_noise0.0_seed42"
+}
+
+========================================================================================================================
+END=2026-05-30T00:06:33.292345
+RETURN_CODE=0

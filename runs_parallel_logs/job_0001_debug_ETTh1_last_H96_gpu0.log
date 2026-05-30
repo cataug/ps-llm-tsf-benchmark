@@ -1,0 +1,53 @@
+JOB_ID=1
+JOB_NAME=debug_ETTh1_last_H96
+GPU=0
+START=2026-05-29T10:07:50.770403
+CMD=/home/tahiti/Malashin_Projects/.venv_a100/bin/python run_icdm_psllm.py --data_root data_icdm_tsf --hf_root /home/tahiti/Malashin_Projects/hf_models --mode M --seq_len 96 --epochs 8 --patience 3 --batch_size 4 --d_model 128 --n_layers 2 --n_heads 4 --rank 64 --lr 0.001 --weight_decay 0.0001 --amp 1 --num_workers 0 --plan single --out_dir runs_icdm_psllm_parallel/debug --dataset ETTh1 --model last --pred_len 96 --llm_name qwen2p5_0p5b_instruct --semantic_encoder mlp --max_train_batches 20 --max_eval_batches 10 --epochs 2 --batch_size 4 --d_model 64 --n_layers 1 --rank 32
+========================================================================================================================
+========================================================================================================================
+RUN: main_ETTh1_model-last_llm-qwen2p5_0p5b_instruct_sem-mlp_mode-M_L96_H96_pat1_sem1_align1_gate1_llm1_fs1.0_noise0.0_seed42
+device: cuda
+data_root: data_icdm_tsf
+hf_root: /home/tahiti/Malashin_Projects/hf_models
+dataset: ETTh1
+model: last
+llm: qwen2p5_0p5b_instruct
+semantic_encoder: mlp
+input_dim: 7 output_dim: 7
+params_total: 0 params_trainable: 0
+batches train/val/test: 3000 412 848
+run_dir: runs_icdm_psllm_parallel/debug/main_ETTh1_model-last_llm-qwen2p5_0p5b_instruct_sem-mlp_mode-M_L96_H96_pat1_sem1_align1_gate1_llm1_fs1.0_noise0.0_seed42
+========================================================================================================================
+TEST RESULT
+{
+  "task": "main",
+  "dataset": "ETTh1",
+  "model": "last",
+  "llm_name": "qwen2p5_0p5b_instruct",
+  "semantic_encoder": "mlp",
+  "mode": "M",
+  "seq_len": 96,
+  "pred_len": 96,
+  "input_dim": 7,
+  "output_dim": 7,
+  "use_pattern": 1,
+  "use_semantic": 1,
+  "use_align": 1,
+  "use_gate": 1,
+  "use_llm": 1,
+  "fewshot_ratio": 1.0,
+  "noise_std": 0.0,
+  "seed": 42,
+  "best_epoch": -1,
+  "test_mse": 1.525733268260956,
+  "test_mae": 0.7469465374946594,
+  "test_nmae": 0.7409512755329726,
+  "params_total": 0,
+  "params_trainable": 0,
+  "elapsed_sec": 0.4376530647277832,
+  "run_dir": "runs_icdm_psllm_parallel/debug/main_ETTh1_model-last_llm-qwen2p5_0p5b_instruct_sem-mlp_mode-M_L96_H96_pat1_sem1_align1_gate1_llm1_fs1.0_noise0.0_seed42"
+}
+
+========================================================================================================================
+END=2026-05-29T10:08:02.771434
+RETURN_CODE=0

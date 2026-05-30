@@ -1,0 +1,4 @@
+done=2026-05-30T13:11:48.581877
+name=ablation_Weather_wo_pattern_H336
+expected_result=runs_icdm_psllm_parallel/ablation/wo_pattern/main_Weather_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H336_pat0_sem1_align0_gate0_llm1_fs1.0_noise0.0_seed42/result.json
+log=runs_parallel_logs/job_0086_ablation_Weather_wo_pattern_H336_gpu0.log

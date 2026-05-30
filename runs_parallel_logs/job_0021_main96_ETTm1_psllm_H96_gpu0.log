@@ -1,0 +1,179 @@
+========================================================================================================================
+JOB_NO=0021
+MANIFEST_INDEX=20
+NAME=main96_ETTm1_psllm_H96
+GPU=0
+START=2026-05-29T17:29:49.991647
+EXPECTED_RESULT=runs_icdm_psllm_parallel/main96/main_ETTm1_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem1_align1_gate1_llm1_fs1.0_noise0.0_seed42/result.json
+CMD=/home/tahiti/Malashin_Projects/.venv_a100/bin/python run_icdm_psllm.py --plan single --data_root data_icdm_tsf --hf_root /home/tahiti/Malashin_Projects/hf_models --out_dir runs_icdm_psllm_parallel/main96 --task main --dataset ETTm1 --mode M --model psllm --llm_name qwen2p5_1p5b --semantic_encoder mlp --seq_len 96 --pred_len 96 --batch_size 2 --epochs 6 --patience 3 --d_model 128 --n_layers 2 --n_heads 4 --rank 64 --lr 0.001 --weight_decay 0.0001 --amp 1 --num_workers 0 --seed 42 --device auto --fewshot_ratio 1.0 --noise_std 0.0 --use_pattern 1 --use_semantic 1 --use_align 1 --use_gate 1 --use_llm 1 --max_train_batches -1 --max_eval_batches -1
+========================================================================================================================
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:   0%|          | 1/338 [00:00<01:34,  3.55it/s]Loading weights:  15%|█▌        | 51/338 [00:00<00:01, 165.80it/s]Loading weights:  23%|██▎       | 79/338 [00:00<00:01, 200.85it/s]Loading weights:  33%|███▎      | 111/338 [00:00<00:00, 234.53it/s]Loading weights:  44%|████▍     | 148/338 [00:00<00:00, 275.48it/s]Loading weights:  58%|█████▊    | 195/338 [00:00<00:00, 312.54it/s]Loading weights:  72%|███████▏  | 243/338 [00:00<00:00, 357.61it/s]Loading weights:  86%|████████▌ | 291/338 [00:01<00:00, 379.82it/s]Loading weights: 100%|██████████| 338/338 [00:01<00:00, 303.15it/s]
+========================================================================================================================
+RUN: main_ETTm1_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem1_align1_gate1_llm1_fs1.0_noise0.0_seed42
+device: cuda
+data_root: data_icdm_tsf
+hf_root: /home/tahiti/Malashin_Projects/hf_models
+dataset: ETTm1
+model: psllm
+llm: qwen2p5_1p5b
+semantic_encoder: mlp
+input_dim: 7 output_dim: 7
+params_total: 1553497543 params_trainable: 9783239
+batches train/val/test: 24292 3436 6921
+run_dir: runs_icdm_psllm_parallel/main96/main_ETTm1_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem1_align1_gate1_llm1_fs1.0_noise0.0_seed42
+========================================================================================================================
+Traceback (most recent call last):
+  File "/home/tahiti/LLM/run_icdm_psllm.py", line 1980, in <module>
+    main()
+  File "/home/tahiti/LLM/run_icdm_psllm.py", line 1960, in main
+    run_one(cfg)
+  File "/home/tahiti/LLM/run_icdm_psllm.py", line 1506, in run_one
+    train_metrics = train_epoch(model, train_loader, optimizer, scaler, device, cfg)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tahiti/LLM/run_icdm_psllm.py", line 1369, in train_epoch
+    pred, align = model(x)
+                  ^^^^^^^^
+  File "/home/tahiti/Malashin_Projects/.venv_a100/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tahiti/Malashin_Projects/.venv_a100/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tahiti/LLM/run_icdm_psllm.py", line 1263, in forward
+    h = self.backbone(emb)
+        ^^^^^^^^^^^^^^^^^^
+  File "/home/tahiti/Malashin_Projects/.venv_a100/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tahiti/Malashin_Projects/.venv_a100/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tahiti/LLM/run_icdm_psllm.py", line 1117, in forward
+    out = self.model(
+          ^^^^^^^^^^^
+  File "/home/tahiti/Malashin_Projects/.venv_a100/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tahiti/Malashin_Projects/.venv_a100/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tahiti/Malashin_Projects/.venv_a100/lib/python3.12/site-packages/transformers/utils/generic.py", line 1032, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tahiti/Malashin_Projects/.venv_a100/lib/python3.12/site-packages/transformers/utils/output_capturing.py", line 252, in wrapper
+    outputs = func(self, *args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tahiti/Malashin_Projects/.venv_a100/lib/python3.12/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 399, in forward
+    hidden_states = decoder_layer(
+                    ^^^^^^^^^^^^^^
+  File "/home/tahiti/Malashin_Projects/.venv_a100/lib/python3.12/site-packages/transformers/modeling_layers.py", line 92, in __call__
+    return self._gradient_checkpointing_func(partial(super().__call__, **kwargs), *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tahiti/Malashin_Projects/.venv_a100/lib/python3.12/site-packages/torch/_compile.py", line 32, in inner
+    return disable_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tahiti/Malashin_Projects/.venv_a100/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 745, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/tahiti/Malashin_Projects/.venv_a100/lib/python3.12/site-packages/torch/utils/checkpoint.py", line 496, in checkpoint
+    ret = function(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tahiti/Malashin_Projects/.venv_a100/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tahiti/Malashin_Projects/.venv_a100/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tahiti/Malashin_Projects/.venv_a100/lib/python3.12/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 293, in forward
+    hidden_states, _ = self.self_attn(
+                       ^^^^^^^^^^^^^^^
+  File "/home/tahiti/Malashin_Projects/.venv_a100/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tahiti/Malashin_Projects/.venv_a100/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tahiti/Malashin_Projects/.venv_a100/lib/python3.12/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 218, in forward
+    key_states = self.k_proj(hidden_states).view(hidden_shape).transpose(1, 2)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tahiti/Malashin_Projects/.venv_a100/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tahiti/Malashin_Projects/.venv_a100/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tahiti/Malashin_Projects/.venv_a100/lib/python3.12/site-packages/torch/nn/modules/linear.py", line 125, in forward
+    return F.linear(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tahiti/Malashin_Projects/.venv_a100/lib/python3.12/site-packages/torch/utils/checkpoint.py", line 1101, in pack_hook
+    def pack_hook(x):
+
+KeyboardInterrupt
+
+========================================================================================================================
+RESTART_APPEND=2026-05-29T17:39:46.249577
+JOB_NO=0021
+MANIFEST_INDEX=20
+NAME=main96_ETTm1_psllm_H96
+GPU=0
+EXPECTED_RESULT=runs_icdm_psllm_parallel/main96/main_ETTm1_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem1_align1_gate1_llm1_fs1.0_noise0.0_seed42/result.json
+CMD=/home/tahiti/Malashin_Projects/.venv_a100/bin/python run_icdm_psllm.py --plan single --data_root data_icdm_tsf --hf_root /home/tahiti/Malashin_Projects/hf_models --out_dir runs_icdm_psllm_parallel/main96 --task main --dataset ETTm1 --mode M --model psllm --llm_name qwen2p5_1p5b --semantic_encoder mlp --seq_len 96 --pred_len 96 --batch_size 2 --epochs 6 --patience 3 --d_model 128 --n_layers 2 --n_heads 4 --rank 64 --lr 0.001 --weight_decay 0.0001 --amp 1 --num_workers 0 --seed 42 --device auto --fewshot_ratio 1.0 --noise_std 0.0 --use_pattern 1 --use_semantic 1 --use_align 1 --use_gate 1 --use_llm 1 --max_train_batches -1 --max_eval_batches -1
+========================================================================================================================
+
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]
+Loading weights:  33%|███▎      | 111/338 [00:00<00:00, 1061.65it/s]
+Loading weights:  64%|██████▍   | 218/338 [00:00<00:00, 869.07it/s] 
+Loading weights:  94%|█████████▍| 319/338 [00:00<00:00, 921.59it/s]
+Loading weights: 100%|██████████| 338/338 [00:00<00:00, 958.29it/s]
+========================================================================================================================
+RUN: main_ETTm1_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem1_align1_gate1_llm1_fs1.0_noise0.0_seed42
+device: cuda
+data_root: data_icdm_tsf
+hf_root: /home/tahiti/Malashin_Projects/hf_models
+dataset: ETTm1
+model: psllm
+llm: qwen2p5_1p5b
+semantic_encoder: mlp
+input_dim: 7 output_dim: 7
+params_total: 1553497543 params_trainable: 9783239
+batches train/val/test: 24292 3436 6921
+run_dir: runs_icdm_psllm_parallel/main96/main_ETTm1_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem1_align1_gate1_llm1_fs1.0_noise0.0_seed42
+========================================================================================================================
+epoch 001 | train mse 0.303169 mae 0.392804 | val mse 0.453323 mae 0.491807
+epoch 002 | train mse 0.197284 mae 0.317541 | val mse 0.537513 mae 0.540374
+epoch 003 | train mse 0.167946 mae 0.294968 | val mse 0.527497 mae 0.510561
+epoch 004 | train mse 0.150881 mae 0.281202 | val mse 0.520193 mae 0.539305
+early stopping at epoch 4, best_epoch=1
+TEST RESULT
+{
+  "task": "main",
+  "dataset": "ETTm1",
+  "model": "psllm",
+  "llm_name": "qwen2p5_1p5b",
+  "semantic_encoder": "mlp",
+  "mode": "M",
+  "seq_len": 96,
+  "pred_len": 96,
+  "input_dim": 7,
+  "output_dim": 7,
+  "use_pattern": 1,
+  "use_semantic": 1,
+  "use_align": 1,
+  "use_gate": 1,
+  "use_llm": 1,
+  "fewshot_ratio": 1.0,
+  "noise_std": 0.0,
+  "seed": 42,
+  "best_epoch": 1,
+  "test_mse": 0.5414499972053836,
+  "test_mae": 0.5236200910891055,
+  "test_nmae": 0.6319617894457633,
+  "params_total": 1553497543,
+  "params_trainable": 9783239,
+  "elapsed_sec": 17272.958517313004,
+  "run_dir": "runs_icdm_psllm_parallel/main96/main_ETTm1_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem1_align1_gate1_llm1_fs1.0_noise0.0_seed42"
+}
+
+========================================================================================================================
+END=2026-05-29T22:27:53.971514
+RETURN_CODE=0

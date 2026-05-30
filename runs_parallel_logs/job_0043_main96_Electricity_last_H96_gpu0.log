@@ -1,0 +1,57 @@
+
+========================================================================================================================
+RESTART_APPEND=2026-05-29T22:28:14.156643
+JOB_NO=0043
+MANIFEST_INDEX=42
+NAME=main96_Electricity_last_H96
+GPU=0
+EXPECTED_RESULT=runs_icdm_psllm_parallel/main96/main_Electricity_model-last_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat0_sem0_align0_gate0_llm0_fs1.0_noise0.0_seed42/result.json
+CMD=/home/tahiti/Malashin_Projects/.venv_a100/bin/python run_icdm_psllm.py --plan single --data_root data_icdm_tsf --hf_root /home/tahiti/Malashin_Projects/hf_models --out_dir runs_icdm_psllm_parallel/main96 --task main --dataset Electricity --mode M --model last --llm_name qwen2p5_1p5b --semantic_encoder mlp --seq_len 96 --pred_len 96 --batch_size 2 --epochs 6 --patience 3 --d_model 128 --n_layers 2 --n_heads 4 --rank 64 --lr 0.001 --weight_decay 0.0001 --amp 1 --num_workers 0 --seed 42 --device auto --fewshot_ratio 1.0 --noise_std 0.0 --use_pattern 0 --use_semantic 0 --use_align 0 --use_gate 0 --use_llm 0 --max_train_batches -1 --max_eval_batches -1
+========================================================================================================================
+========================================================================================================================
+RUN: main_Electricity_model-last_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat0_sem0_align0_gate0_llm0_fs1.0_noise0.0_seed42
+device: cuda
+data_root: data_icdm_tsf
+hf_root: /home/tahiti/Malashin_Projects/hf_models
+dataset: Electricity
+model: last
+llm: qwen2p5_1p5b
+semantic_encoder: mlp
+input_dim: 321 output_dim: 321
+params_total: 0 params_trainable: 0
+batches train/val/test: 9110 1268 2583
+run_dir: runs_icdm_psllm_parallel/main96/main_Electricity_model-last_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat0_sem0_align0_gate0_llm0_fs1.0_noise0.0_seed42
+========================================================================================================================
+TEST RESULT
+{
+  "task": "main",
+  "dataset": "Electricity",
+  "model": "last",
+  "llm_name": "qwen2p5_1p5b",
+  "semantic_encoder": "mlp",
+  "mode": "M",
+  "seq_len": 96,
+  "pred_len": 96,
+  "input_dim": 321,
+  "output_dim": 321,
+  "use_pattern": 0,
+  "use_semantic": 0,
+  "use_align": 0,
+  "use_gate": 0,
+  "use_llm": 0,
+  "fewshot_ratio": 1.0,
+  "noise_std": 0.0,
+  "seed": 42,
+  "best_epoch": -1,
+  "test_mse": 1.5877032607413057,
+  "test_mae": 0.9454044649825278,
+  "test_nmae": 1.1420653672928,
+  "params_total": 0,
+  "params_trainable": 0,
+  "elapsed_sec": 51.958507776260376,
+  "run_dir": "runs_icdm_psllm_parallel/main96/main_Electricity_model-last_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat0_sem0_align0_gate0_llm0_fs1.0_noise0.0_seed42"
+}
+
+========================================================================================================================
+END=2026-05-29T22:29:26.596095
+RETURN_CODE=0

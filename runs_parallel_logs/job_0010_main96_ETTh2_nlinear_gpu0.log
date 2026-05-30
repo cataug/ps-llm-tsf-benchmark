@@ -1,0 +1,59 @@
+JOB_ID=10
+JOB_NAME=main96_ETTh2_nlinear
+GPU=0
+START=2026-05-29T11:31:07.838208
+CMD=/home/tahiti/Malashin_Projects/.venv_a100/bin/python run_icdm_psllm.py --data_root data_icdm_tsf --hf_root /home/tahiti/Malashin_Projects/hf_models --mode M --seq_len 96 --epochs 8 --patience 3 --batch_size 4 --d_model 128 --n_layers 2 --n_heads 4 --rank 64 --lr 0.001 --weight_decay 0.0001 --amp 1 --num_workers 0 --plan single --out_dir runs_icdm_psllm_parallel/main96 --dataset ETTh2 --model nlinear --pred_len 96 --llm_name qwen2p5_1p5b --semantic_encoder mlp
+========================================================================================================================
+========================================================================================================================
+RUN: main_ETTh2_model-nlinear_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem1_align1_gate1_llm1_fs1.0_noise0.0_seed42
+device: cuda
+data_root: data_icdm_tsf
+hf_root: /home/tahiti/Malashin_Projects/hf_models
+dataset: ETTh2
+model: nlinear
+llm: qwen2p5_1p5b
+semantic_encoder: mlp
+input_dim: 7 output_dim: 7
+params_total: 9312 params_trainable: 9312
+batches train/val/test: 3000 412 848
+run_dir: runs_icdm_psllm_parallel/main96/main_ETTh2_model-nlinear_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem1_align1_gate1_llm1_fs1.0_noise0.0_seed42
+========================================================================================================================
+epoch 001 | train mse 0.308156 mae 0.320997 | val mse 0.270407 mae 0.349657
+epoch 002 | train mse 0.301325 mae 0.313170 | val mse 0.262382 mae 0.346477
+epoch 003 | train mse 0.300184 mae 0.311700 | val mse 0.267235 mae 0.346725
+epoch 004 | train mse 0.299852 mae 0.311573 | val mse 0.266120 mae 0.345765
+epoch 005 | train mse 0.298888 mae 0.311030 | val mse 0.272517 mae 0.348343
+early stopping at epoch 5, best_epoch=2
+TEST RESULT
+{
+  "task": "main",
+  "dataset": "ETTh2",
+  "model": "nlinear",
+  "llm_name": "qwen2p5_1p5b",
+  "semantic_encoder": "mlp",
+  "mode": "M",
+  "seq_len": 96,
+  "pred_len": 96,
+  "input_dim": 7,
+  "output_dim": 7,
+  "use_pattern": 1,
+  "use_semantic": 1,
+  "use_align": 1,
+  "use_gate": 1,
+  "use_llm": 1,
+  "fewshot_ratio": 1.0,
+  "noise_std": 0.0,
+  "seed": 42,
+  "best_epoch": 2,
+  "test_mse": 0.1854044586411273,
+  "test_mae": 0.28980280406210784,
+  "test_nmae": 0.3639492751006898,
+  "params_total": 9312,
+  "params_trainable": 9312,
+  "elapsed_sec": 33.15186643600464,
+  "run_dir": "runs_icdm_psllm_parallel/main96/main_ETTh2_model-nlinear_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem1_align1_gate1_llm1_fs1.0_noise0.0_seed42"
+}
+
+========================================================================================================================
+END=2026-05-29T11:31:49.839527
+RETURN_CODE=0

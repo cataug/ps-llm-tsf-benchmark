@@ -1,0 +1,4 @@
+done=2026-05-30T02:35:33.205879
+name=ablation_ETTh1_wo_semantic_H96
+expected_result=runs_icdm_psllm_parallel/ablation/wo_semantic/main_ETTh1_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem0_align0_gate0_llm1_fs1.0_noise0.0_seed42/result.json
+log=runs_parallel_logs/job_0066_ablation_ETTh1_wo_semantic_H96_gpu0.log

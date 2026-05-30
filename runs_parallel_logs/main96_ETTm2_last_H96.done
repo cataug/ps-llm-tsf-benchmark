@@ -1,0 +1,4 @@
+done=2026-05-29T17:40:34.598388
+name=main96_ETTm2_last_H96
+expected_result=runs_icdm_psllm_parallel/main96/main_ETTm2_model-last_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat0_sem0_align0_gate0_llm0_fs1.0_noise0.0_seed42/result.json
+log=runs_parallel_logs/job_0022_main96_ETTm2_last_H96_gpu0.log

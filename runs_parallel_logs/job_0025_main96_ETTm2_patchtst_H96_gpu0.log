@@ -1,0 +1,63 @@
+
+========================================================================================================================
+RESTART_APPEND=2026-05-29T17:49:36.523193
+JOB_NO=0025
+MANIFEST_INDEX=24
+NAME=main96_ETTm2_patchtst_H96
+GPU=0
+EXPECTED_RESULT=runs_icdm_psllm_parallel/main96/main_ETTm2_model-patchtst_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat0_sem0_align0_gate0_llm0_fs1.0_noise0.0_seed42/result.json
+CMD=/home/tahiti/Malashin_Projects/.venv_a100/bin/python run_icdm_psllm.py --plan single --data_root data_icdm_tsf --hf_root /home/tahiti/Malashin_Projects/hf_models --out_dir runs_icdm_psllm_parallel/main96 --task main --dataset ETTm2 --mode M --model patchtst --llm_name qwen2p5_1p5b --semantic_encoder mlp --seq_len 96 --pred_len 96 --batch_size 2 --epochs 6 --patience 3 --d_model 128 --n_layers 2 --n_heads 4 --rank 64 --lr 0.001 --weight_decay 0.0001 --amp 1 --num_workers 0 --seed 42 --device auto --fewshot_ratio 1.0 --noise_std 0.0 --use_pattern 0 --use_semantic 0 --use_align 0 --use_gate 0 --use_llm 0 --max_train_batches -1 --max_eval_batches -1
+========================================================================================================================
+========================================================================================================================
+RUN: main_ETTm2_model-patchtst_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat0_sem0_align0_gate0_llm0_fs1.0_noise0.0_seed42
+device: cuda
+data_root: data_icdm_tsf
+hf_root: /home/tahiti/Malashin_Projects/hf_models
+dataset: ETTm2
+model: patchtst
+llm: qwen2p5_1p5b
+semantic_encoder: mlp
+input_dim: 7 output_dim: 7
+params_total: 533984 params_trainable: 533984
+batches train/val/test: 24292 3436 6921
+run_dir: runs_icdm_psllm_parallel/main96/main_ETTm2_model-patchtst_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat0_sem0_align0_gate0_llm0_fs1.0_noise0.0_seed42
+========================================================================================================================
+epoch 001 | train mse 0.166931 mae 0.253360 | val mse 0.166998 mae 0.272464
+epoch 002 | train mse 0.156099 mae 0.241278 | val mse 0.167847 mae 0.278314
+epoch 003 | train mse 0.153368 mae 0.238839 | val mse 0.165617 mae 0.275503
+epoch 004 | train mse 0.152244 mae 0.237908 | val mse 0.165046 mae 0.269229
+epoch 005 | train mse 0.151335 mae 0.237334 | val mse 0.156462 mae 0.259478
+epoch 006 | train mse 0.150600 mae 0.236798 | val mse 0.171767 mae 0.282602
+TEST RESULT
+{
+  "task": "main",
+  "dataset": "ETTm2",
+  "model": "patchtst",
+  "llm_name": "qwen2p5_1p5b",
+  "semantic_encoder": "mlp",
+  "mode": "M",
+  "seq_len": 96,
+  "pred_len": 96,
+  "input_dim": 7,
+  "output_dim": 7,
+  "use_pattern": 0,
+  "use_semantic": 0,
+  "use_align": 0,
+  "use_gate": 0,
+  "use_llm": 0,
+  "fewshot_ratio": 1.0,
+  "noise_std": 0.0,
+  "seed": 42,
+  "best_epoch": 5,
+  "test_mse": 0.11815920673104065,
+  "test_mae": 0.23182734495047425,
+  "test_nmae": 0.2966315216215149,
+  "params_total": 533984,
+  "params_trainable": 533984,
+  "elapsed_sec": 1850.690276145935,
+  "run_dir": "runs_icdm_psllm_parallel/main96/main_ETTm2_model-patchtst_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat0_sem0_align0_gate0_llm0_fs1.0_noise0.0_seed42"
+}
+
+========================================================================================================================
+END=2026-05-29T18:20:38.617419
+RETURN_CODE=0

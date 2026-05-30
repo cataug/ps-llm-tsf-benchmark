@@ -1,0 +1,60 @@
+JOB_ID=4
+JOB_NAME=main96_ETTh1_patchtst
+GPU=0
+START=2026-05-29T10:12:05.763012
+CMD=/home/tahiti/Malashin_Projects/.venv_a100/bin/python run_icdm_psllm.py --data_root data_icdm_tsf --hf_root /home/tahiti/Malashin_Projects/hf_models --mode M --seq_len 96 --epochs 8 --patience 3 --batch_size 4 --d_model 128 --n_layers 2 --n_heads 4 --rank 64 --lr 0.001 --weight_decay 0.0001 --amp 1 --num_workers 0 --plan single --out_dir runs_icdm_psllm_parallel/main96 --dataset ETTh1 --model patchtst --pred_len 96 --llm_name qwen2p5_1p5b --semantic_encoder mlp
+========================================================================================================================
+========================================================================================================================
+RUN: main_ETTh1_model-patchtst_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem1_align1_gate1_llm1_fs1.0_noise0.0_seed42
+device: cuda
+data_root: data_icdm_tsf
+hf_root: /home/tahiti/Malashin_Projects/hf_models
+dataset: ETTh1
+model: patchtst
+llm: qwen2p5_1p5b
+semantic_encoder: mlp
+input_dim: 7 output_dim: 7
+params_total: 533984 params_trainable: 533984
+batches train/val/test: 3000 412 848
+run_dir: runs_icdm_psllm_parallel/main96/main_ETTh1_model-patchtst_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem1_align1_gate1_llm1_fs1.0_noise0.0_seed42
+========================================================================================================================
+epoch 001 | train mse 0.386242 mae 0.438333 | val mse 0.360905 mae 0.408795
+epoch 002 | train mse 0.361363 mae 0.421661 | val mse 0.360823 mae 0.410246
+epoch 003 | train mse 0.350545 mae 0.415968 | val mse 0.354624 mae 0.408190
+epoch 004 | train mse 0.338550 mae 0.410534 | val mse 0.369320 mae 0.412003
+epoch 005 | train mse 0.326020 mae 0.404930 | val mse 0.366769 mae 0.411755
+epoch 006 | train mse 0.314600 mae 0.399964 | val mse 0.358068 mae 0.403041
+early stopping at epoch 6, best_epoch=3
+TEST RESULT
+{
+  "task": "main",
+  "dataset": "ETTh1",
+  "model": "patchtst",
+  "llm_name": "qwen2p5_1p5b",
+  "semantic_encoder": "mlp",
+  "mode": "M",
+  "seq_len": 96,
+  "pred_len": 96,
+  "input_dim": 7,
+  "output_dim": 7,
+  "use_pattern": 1,
+  "use_semantic": 1,
+  "use_align": 1,
+  "use_gate": 1,
+  "use_llm": 1,
+  "fewshot_ratio": 1.0,
+  "noise_std": 0.0,
+  "seed": 42,
+  "best_epoch": 3,
+  "test_mse": 0.43888552246158413,
+  "test_mae": 0.462310435039536,
+  "test_nmae": 0.5577596175426175,
+  "params_total": 533984,
+  "params_trainable": 533984,
+  "elapsed_sec": 131.0220718383789,
+  "run_dir": "runs_icdm_psllm_parallel/main96/main_ETTh1_model-patchtst_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem1_align1_gate1_llm1_fs1.0_noise0.0_seed42"
+}
+
+========================================================================================================================
+END=2026-05-29T10:14:27.765923
+RETURN_CODE=0

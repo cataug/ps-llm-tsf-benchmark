@@ -1,0 +1,71 @@
+
+========================================================================================================================
+RESTART_APPEND=2026-05-30T04:19:31.838384
+JOB_NO=0075
+MANIFEST_INDEX=74
+NAME=ablation_ETTh1_wo_gate_H336
+GPU=0
+EXPECTED_RESULT=runs_icdm_psllm_parallel/ablation/wo_gate/main_ETTh1_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H336_pat1_sem1_align1_gate0_llm1_fs1.0_noise0.0_seed42/result.json
+CMD=/home/tahiti/Malashin_Projects/.venv_a100/bin/python run_icdm_psllm.py --plan single --data_root data_icdm_tsf --hf_root /home/tahiti/Malashin_Projects/hf_models --out_dir runs_icdm_psllm_parallel/ablation/wo_gate --task main --dataset ETTh1 --mode M --model psllm --llm_name qwen2p5_1p5b --semantic_encoder mlp --seq_len 96 --pred_len 336 --batch_size 2 --epochs 6 --patience 3 --d_model 128 --n_layers 2 --n_heads 4 --rank 64 --lr 0.001 --weight_decay 0.0001 --amp 1 --num_workers 0 --seed 42 --device auto --fewshot_ratio 1.0 --noise_std 0.0 --use_pattern 1 --use_semantic 1 --use_align 1 --use_gate 0 --use_llm 1 --max_train_batches -1 --max_eval_batches -1
+========================================================================================================================
+
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/338 [00:00<00:34,  9.71it/s]
+Loading weights:  19%|█▊        | 63/338 [00:00<00:00, 356.68it/s]
+Loading weights:  40%|███▉      | 135/338 [00:00<00:00, 504.36it/s]
+Loading weights:  65%|██████▍   | 219/338 [00:00<00:00, 604.58it/s]
+Loading weights:  86%|████████▌ | 291/338 [00:00<00:00, 642.66it/s]
+Loading weights: 100%|██████████| 338/338 [00:00<00:00, 586.43it/s]
+========================================================================================================================
+RUN: main_ETTh1_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H336_pat1_sem1_align1_gate0_llm1_fs1.0_noise0.0_seed42
+device: cuda
+data_root: data_icdm_tsf
+hf_root: /home/tahiti/Malashin_Projects/hf_models
+dataset: ETTh1
+model: psllm
+llm: qwen2p5_1p5b
+semantic_encoder: mlp
+input_dim: 7 output_dim: 7
+params_total: 1577105863 params_trainable: 33391559
+batches train/val/test: 5881 703 1575
+run_dir: runs_icdm_psllm_parallel/ablation/wo_gate/main_ETTh1_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H336_pat1_sem1_align1_gate0_llm1_fs1.0_noise0.0_seed42
+========================================================================================================================
+epoch 001 | train mse 0.587059 mae 0.557343 | val mse 0.976605 mae 0.796465
+epoch 002 | train mse 0.439952 mae 0.482112 | val mse 0.945569 mae 0.785863
+epoch 003 | train mse 0.368682 mae 0.443697 | val mse 0.890384 mae 0.747246
+epoch 004 | train mse 0.317279 mae 0.412744 | val mse 0.802599 mae 0.697825
+epoch 005 | train mse 0.290510 mae 0.394819 | val mse 0.827361 mae 0.726193
+epoch 006 | train mse 0.273081 mae 0.382398 | val mse 0.759483 mae 0.679066
+TEST RESULT
+{
+  "task": "main",
+  "dataset": "ETTh1",
+  "model": "psllm",
+  "llm_name": "qwen2p5_1p5b",
+  "semantic_encoder": "mlp",
+  "mode": "M",
+  "seq_len": 96,
+  "pred_len": 336,
+  "input_dim": 7,
+  "output_dim": 7,
+  "use_pattern": 1,
+  "use_semantic": 1,
+  "use_align": 1,
+  "use_gate": 0,
+  "use_llm": 1,
+  "fewshot_ratio": 1.0,
+  "noise_std": 0.0,
+  "seed": 42,
+  "best_epoch": 6,
+  "test_mse": 0.8462258470058441,
+  "test_mae": 0.682958789193441,
+  "test_nmae": 0.8261481679619167,
+  "params_total": 1577105863,
+  "params_trainable": 33391559,
+  "elapsed_sec": 6084.620235443115,
+  "run_dir": "runs_icdm_psllm_parallel/ablation/wo_gate/main_ETTh1_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H336_pat1_sem1_align1_gate0_llm1_fs1.0_noise0.0_seed42"
+}
+
+========================================================================================================================
+END=2026-05-30T06:01:11.866985
+RETURN_CODE=0

@@ -1,0 +1,62 @@
+
+========================================================================================================================
+RESTART_APPEND=2026-05-30T00:11:12.829966
+JOB_NO=0061
+MANIFEST_INDEX=60
+NAME=main96_ILI_itransformer_H24
+GPU=0
+EXPECTED_RESULT=runs_icdm_psllm_parallel/main96/main_ILI_model-itransformer_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H24_pat0_sem0_align0_gate0_llm0_fs1.0_noise0.0_seed42/result.json
+CMD=/home/tahiti/Malashin_Projects/.venv_a100/bin/python run_icdm_psllm.py --plan single --data_root data_icdm_tsf --hf_root /home/tahiti/Malashin_Projects/hf_models --out_dir runs_icdm_psllm_parallel/main96 --task main --dataset ILI --mode M --model itransformer --llm_name qwen2p5_1p5b --semantic_encoder mlp --seq_len 96 --pred_len 24 --batch_size 2 --epochs 6 --patience 3 --d_model 128 --n_layers 2 --n_heads 4 --rank 64 --lr 0.001 --weight_decay 0.0001 --amp 1 --num_workers 0 --seed 42 --device auto --fewshot_ratio 1.0 --noise_std 0.0 --use_pattern 0 --use_semantic 0 --use_align 0 --use_gate 0 --use_llm 0 --max_train_batches -1 --max_eval_batches -1
+========================================================================================================================
+========================================================================================================================
+RUN: main_ILI_model-itransformer_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H24_pat0_sem0_align0_gate0_llm0_fs1.0_noise0.0_seed42
+device: cuda
+data_root: data_icdm_tsf
+hf_root: /home/tahiti/Malashin_Projects/hf_models
+dataset: ILI
+model: itransformer
+llm: qwen2p5_1p5b
+semantic_encoder: mlp
+input_dim: 7 output_dim: 7
+params_total: 412056 params_trainable: 412056
+batches train/val/test: 278 37 86
+run_dir: runs_icdm_psllm_parallel/main96/main_ILI_model-itransformer_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H24_pat0_sem0_align0_gate0_llm0_fs1.0_noise0.0_seed42
+========================================================================================================================
+epoch 001 | train mse 0.574095 mae 0.490805 | val mse 0.296593 mae 0.373156
+epoch 002 | train mse 0.383107 mae 0.386168 | val mse 0.509407 mae 0.492477
+epoch 003 | train mse 0.291185 mae 0.344918 | val mse 0.352115 mae 0.406899
+epoch 004 | train mse 0.235565 mae 0.310071 | val mse 0.354764 mae 0.410048
+early stopping at epoch 4, best_epoch=1
+TEST RESULT
+{
+  "task": "main",
+  "dataset": "ILI",
+  "model": "itransformer",
+  "llm_name": "qwen2p5_1p5b",
+  "semantic_encoder": "mlp",
+  "mode": "M",
+  "seq_len": 96,
+  "pred_len": 24,
+  "input_dim": 7,
+  "output_dim": 7,
+  "use_pattern": 0,
+  "use_semantic": 0,
+  "use_align": 0,
+  "use_gate": 0,
+  "use_llm": 0,
+  "fewshot_ratio": 1.0,
+  "noise_std": 0.0,
+  "seed": 42,
+  "best_epoch": 1,
+  "test_mse": 2.9413871342359585,
+  "test_mae": 1.1835219908592314,
+  "test_nmae": 0.6370825532153505,
+  "params_total": 412056,
+  "params_trainable": 412056,
+  "elapsed_sec": 18.69154405593872,
+  "run_dir": "runs_icdm_psllm_parallel/main96/main_ILI_model-itransformer_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H24_pat0_sem0_align0_gate0_llm0_fs1.0_noise0.0_seed42"
+}
+
+========================================================================================================================
+END=2026-05-30T00:11:44.965028
+RETURN_CODE=0

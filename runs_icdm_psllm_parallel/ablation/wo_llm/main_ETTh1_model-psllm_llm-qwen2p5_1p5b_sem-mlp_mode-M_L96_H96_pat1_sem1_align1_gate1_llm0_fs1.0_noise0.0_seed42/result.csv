@@ -1,0 +1,2 @@
+task,dataset,model,llm_name,semantic_encoder,mode,seq_len,pred_len,input_dim,output_dim,use_pattern,use_semantic,use_align,use_gate,use_llm,fewshot_ratio,noise_std,seed,best_epoch,test_mse,test_mae,test_nmae,params_total,params_trainable,elapsed_sec,run_dir
+main,ETTh1,psllm,qwen2p5_1p5b,mlp,M,96,96,7,7,1,1,1,1,0,1.0,0.0,42,6,0.821841692836587,0.6627274078781275,0.7980004029502714,1327815,1327815,892.4853179454803,runs_icdm_psllm_parallel/ablation/wo_llm/main_ETTh1_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem1_align1_gate1_llm0_fs1.0_noise0.0_seed42

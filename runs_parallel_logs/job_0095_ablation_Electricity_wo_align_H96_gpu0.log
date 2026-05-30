@@ -1,0 +1,72 @@
+
+========================================================================================================================
+RESTART_APPEND=2026-05-30T17:40:13.508201
+JOB_NO=0095
+MANIFEST_INDEX=94
+NAME=ablation_Electricity_wo_align_H96
+GPU=0
+EXPECTED_RESULT=runs_icdm_psllm_parallel/ablation/wo_align/main_Electricity_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem1_align0_gate1_llm1_fs1.0_noise0.0_seed42/result.json
+CMD=/home/tahiti/Malashin_Projects/.venv_a100/bin/python run_icdm_psllm.py --plan single --data_root data_icdm_tsf --hf_root /home/tahiti/Malashin_Projects/hf_models --out_dir runs_icdm_psllm_parallel/ablation/wo_align --task main --dataset Electricity --mode M --model psllm --llm_name qwen2p5_1p5b --semantic_encoder mlp --seq_len 96 --pred_len 96 --batch_size 2 --epochs 6 --patience 3 --d_model 128 --n_layers 2 --n_heads 4 --rank 64 --lr 0.001 --weight_decay 0.0001 --amp 1 --num_workers 0 --seed 42 --device auto --fewshot_ratio 1.0 --noise_std 0.0 --use_pattern 1 --use_semantic 1 --use_align 0 --use_gate 1 --use_llm 1 --max_train_batches -1 --max_eval_batches -1
+========================================================================================================================
+
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/338 [00:00<00:59,  5.64it/s]
+Loading weights:  26%|██▌       | 87/338 [00:00<00:00, 373.39it/s]
+Loading weights:  42%|████▏     | 143/338 [00:00<00:00, 436.10it/s]
+Loading weights:  61%|██████    | 207/338 [00:00<00:00, 504.94it/s]
+Loading weights:  80%|███████▉  | 269/338 [00:00<00:00, 532.36it/s]
+Loading weights: 100%|██████████| 338/338 [00:00<00:00, 513.36it/s]
+========================================================================================================================
+RUN: main_Electricity_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem1_align0_gate1_llm1_fs1.0_noise0.0_seed42
+device: cuda
+data_root: data_icdm_tsf
+hf_root: /home/tahiti/Malashin_Projects/hf_models
+dataset: Electricity
+model: psllm
+llm: qwen2p5_1p5b
+semantic_encoder: mlp
+input_dim: 321 output_dim: 321
+params_total: 1554321793 params_trainable: 10607489
+batches train/val/test: 9110 1268 2583
+run_dir: runs_icdm_psllm_parallel/ablation/wo_align/main_Electricity_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem1_align0_gate1_llm1_fs1.0_noise0.0_seed42
+========================================================================================================================
+epoch 001 | train mse 0.376194 mae 0.439954 | val mse 0.296114 mae 0.381122
+epoch 002 | train mse 0.219282 mae 0.327199 | val mse 0.246514 mae 0.338279
+epoch 003 | train mse 0.187961 mae 0.302039 | val mse 0.240654 mae 0.332729
+epoch 004 | train mse nan mae nan | val mse 0.247567 mae 0.339622
+epoch 005 | train mse nan mae nan | val mse nan mae nan
+epoch 006 | train mse nan mae nan | val mse nan mae nan
+early stopping at epoch 6, best_epoch=3
+TEST RESULT
+{
+  "task": "main",
+  "dataset": "Electricity",
+  "model": "psllm",
+  "llm_name": "qwen2p5_1p5b",
+  "semantic_encoder": "mlp",
+  "mode": "M",
+  "seq_len": 96,
+  "pred_len": 96,
+  "input_dim": 321,
+  "output_dim": 321,
+  "use_pattern": 1,
+  "use_semantic": 1,
+  "use_align": 0,
+  "use_gate": 1,
+  "use_llm": 1,
+  "fewshot_ratio": 1.0,
+  "noise_std": 0.0,
+  "seed": 42,
+  "best_epoch": 3,
+  "test_mse": 0.3095735833423801,
+  "test_mae": 0.3846293683551422,
+  "test_nmae": 0.46362305499412476,
+  "params_total": 1554321793,
+  "params_trainable": 10607489,
+  "elapsed_sec": 11164.552451133728,
+  "run_dir": "runs_icdm_psllm_parallel/ablation/wo_align/main_Electricity_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem1_align0_gate1_llm1_fs1.0_noise0.0_seed42"
+}
+
+========================================================================================================================
+END=2026-05-30T20:46:38.212097
+RETURN_CODE=0

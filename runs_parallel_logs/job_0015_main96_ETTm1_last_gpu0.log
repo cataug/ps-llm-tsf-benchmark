@@ -1,0 +1,53 @@
+JOB_ID=15
+JOB_NAME=main96_ETTm1_last
+GPU=0
+START=2026-05-29T12:37:27.905244
+CMD=/home/tahiti/Malashin_Projects/.venv_a100/bin/python run_icdm_psllm.py --data_root data_icdm_tsf --hf_root /home/tahiti/Malashin_Projects/hf_models --mode M --seq_len 96 --epochs 8 --patience 3 --batch_size 4 --d_model 128 --n_layers 2 --n_heads 4 --rank 64 --lr 0.001 --weight_decay 0.0001 --amp 1 --num_workers 0 --plan single --out_dir runs_icdm_psllm_parallel/main96 --dataset ETTm1 --model last --pred_len 96 --llm_name qwen2p5_1p5b --semantic_encoder mlp
+========================================================================================================================
+========================================================================================================================
+RUN: main_ETTm1_model-last_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem1_align1_gate1_llm1_fs1.0_noise0.0_seed42
+device: cuda
+data_root: data_icdm_tsf
+hf_root: /home/tahiti/Malashin_Projects/hf_models
+dataset: ETTm1
+model: last
+llm: qwen2p5_1p5b
+semantic_encoder: mlp
+input_dim: 7 output_dim: 7
+params_total: 0 params_trainable: 0
+batches train/val/test: 12146 1718 3461
+run_dir: runs_icdm_psllm_parallel/main96/main_ETTm1_model-last_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem1_align1_gate1_llm1_fs1.0_noise0.0_seed42
+========================================================================================================================
+TEST RESULT
+{
+  "task": "main",
+  "dataset": "ETTm1",
+  "model": "last",
+  "llm_name": "qwen2p5_1p5b",
+  "semantic_encoder": "mlp",
+  "mode": "M",
+  "seq_len": 96,
+  "pred_len": 96,
+  "input_dim": 7,
+  "output_dim": 7,
+  "use_pattern": 1,
+  "use_semantic": 1,
+  "use_align": 1,
+  "use_gate": 1,
+  "use_llm": 1,
+  "fewshot_ratio": 1.0,
+  "noise_std": 0.0,
+  "seed": 42,
+  "best_epoch": -1,
+  "test_mse": 1.4630649466016694,
+  "test_mae": 0.7770680444020691,
+  "test_nmae": 0.92571764582447,
+  "params_total": 0,
+  "params_trainable": 0,
+  "elapsed_sec": 3.529284715652466,
+  "run_dir": "runs_icdm_psllm_parallel/main96/main_ETTm1_model-last_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem1_align1_gate1_llm1_fs1.0_noise0.0_seed42"
+}
+
+========================================================================================================================
+END=2026-05-29T12:37:39.906564
+RETURN_CODE=0

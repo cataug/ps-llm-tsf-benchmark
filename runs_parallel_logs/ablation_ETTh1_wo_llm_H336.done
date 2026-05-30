@@ -1,0 +1,4 @@
+done=2026-05-30T05:12:56.356240
+name=ablation_ETTh1_wo_llm_H336
+expected_result=runs_icdm_psllm_parallel/ablation/wo_llm/main_ETTh1_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H336_pat1_sem1_align1_gate1_llm0_fs1.0_noise0.0_seed42/result.json
+log=runs_parallel_logs/job_0076_ablation_ETTh1_wo_llm_H336_gpu0.log

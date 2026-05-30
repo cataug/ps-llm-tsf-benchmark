@@ -1,0 +1,63 @@
+
+========================================================================================================================
+RESTART_APPEND=2026-05-29T20:48:16.078790
+JOB_NO=0040
+MANIFEST_INDEX=39
+NAME=main96_Traffic_itransformer_H96
+GPU=0
+EXPECTED_RESULT=runs_icdm_psllm_parallel/main96/main_Traffic_model-itransformer_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat0_sem0_align0_gate0_llm0_fs1.0_noise0.0_seed42/result.json
+CMD=/home/tahiti/Malashin_Projects/.venv_a100/bin/python run_icdm_psllm.py --plan single --data_root data_icdm_tsf --hf_root /home/tahiti/Malashin_Projects/hf_models --out_dir runs_icdm_psllm_parallel/main96 --task main --dataset Traffic --mode M --model itransformer --llm_name qwen2p5_1p5b --semantic_encoder mlp --seq_len 96 --pred_len 96 --batch_size 2 --epochs 6 --patience 3 --d_model 128 --n_layers 2 --n_heads 4 --rank 64 --lr 0.001 --weight_decay 0.0001 --amp 1 --num_workers 0 --seed 42 --device auto --fewshot_ratio 1.0 --noise_std 0.0 --use_pattern 0 --use_semantic 0 --use_align 0 --use_gate 0 --use_llm 0 --max_train_batches -1 --max_eval_batches -1
+========================================================================================================================
+========================================================================================================================
+RUN: main_Traffic_model-itransformer_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat0_sem0_align0_gate0_llm0_fs1.0_noise0.0_seed42
+device: cuda
+data_root: data_icdm_tsf
+hf_root: /home/tahiti/Malashin_Projects/hf_models
+dataset: Traffic
+model: itransformer
+llm: qwen2p5_1p5b
+semantic_encoder: mlp
+input_dim: 862 output_dim: 862
+params_total: 421344 params_trainable: 421344
+batches train/val/test: 6044 830 1707
+run_dir: runs_icdm_psllm_parallel/main96/main_Traffic_model-itransformer_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat0_sem0_align0_gate0_llm0_fs1.0_noise0.0_seed42
+========================================================================================================================
+epoch 001 | train mse 0.322408 mae 0.323181 | val mse 0.441064 mae 0.305622
+epoch 002 | train mse 0.281430 mae 0.286125 | val mse 0.427531 mae 0.289001
+epoch 003 | train mse 0.271391 mae 0.276960 | val mse 0.419355 mae 0.286864
+epoch 004 | train mse 0.265042 mae 0.271455 | val mse 0.418869 mae 0.286345
+epoch 005 | train mse 0.261495 mae 0.268367 | val mse 0.416913 mae 0.283223
+epoch 006 | train mse 0.257585 mae 0.265053 | val mse 0.414983 mae 0.279202
+TEST RESULT
+{
+  "task": "main",
+  "dataset": "Traffic",
+  "model": "itransformer",
+  "llm_name": "qwen2p5_1p5b",
+  "semantic_encoder": "mlp",
+  "mode": "M",
+  "seq_len": 96,
+  "pred_len": 96,
+  "input_dim": 862,
+  "output_dim": 862,
+  "use_pattern": 0,
+  "use_semantic": 0,
+  "use_align": 0,
+  "use_gate": 0,
+  "use_llm": 0,
+  "fewshot_ratio": 1.0,
+  "noise_std": 0.0,
+  "seed": 42,
+  "best_epoch": 6,
+  "test_mse": 0.4762696915714798,
+  "test_mae": 0.30224364342994,
+  "test_nmae": 0.3808885889248721,
+  "params_total": 421344,
+  "params_trainable": 421344,
+  "elapsed_sec": 2376.376835346222,
+  "run_dir": "runs_icdm_psllm_parallel/main96/main_Traffic_model-itransformer_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat0_sem0_align0_gate0_llm0_fs1.0_noise0.0_seed42"
+}
+
+========================================================================================================================
+END=2026-05-29T21:28:08.840381
+RETURN_CODE=0

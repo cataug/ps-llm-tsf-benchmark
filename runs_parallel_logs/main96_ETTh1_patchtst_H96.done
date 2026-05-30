@@ -1,0 +1,3 @@
+done=2026-05-29T16:38:51.351619
+result=runs_icdm_psllm_parallel/main96/main_ETTh1_model-patchtst_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat0_sem0_align0_gate0_llm0_fs1.0_noise0.0_seed42/result.json
+log=runs_parallel_logs/job_00004_main96_ETTh1_patchtst_H96_gpu0.log

@@ -1,0 +1,4 @@
+done=2026-05-29T19:04:47.587390
+name=main96_Weather_patchtst_H96
+expected_result=runs_icdm_psllm_parallel/main96/main_Weather_model-patchtst_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat0_sem0_align0_gate0_llm0_fs1.0_noise0.0_seed42/result.json
+log=runs_parallel_logs/job_0032_main96_Weather_patchtst_H96_gpu0.log

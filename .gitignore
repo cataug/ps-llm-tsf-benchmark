@@ -1,0 +1,40 @@
+# Python/cache
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Environments
+.venv/
+.venv_a100/
+env/
+venv/
+
+# Data and raw archives
+data_icdm_tsf/
+*.zip
+*.tar
+*.gz
+
+# HuggingFace / local models
+hf_models/
+Malashin_Projects/hf_models/
+*/hf_models/
+
+# Heavy checkpoints
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Heavy generated experiment folders ignored by default
+runs_icdm_psllm/
+runs_icdm_psllm_parallel/
+
+# Temporary/nohup/wait logs
+*.nohup.log
+wait_*.log
+launch_all*.log
+
+# OS/editor
+.DS_Store
+*.swp

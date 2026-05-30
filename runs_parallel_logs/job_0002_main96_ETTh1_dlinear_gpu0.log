@@ -1,0 +1,60 @@
+JOB_ID=2
+JOB_NAME=main96_ETTh1_dlinear
+GPU=0
+START=2026-05-29T10:10:41.758933
+CMD=/home/tahiti/Malashin_Projects/.venv_a100/bin/python run_icdm_psllm.py --data_root data_icdm_tsf --hf_root /home/tahiti/Malashin_Projects/hf_models --mode M --seq_len 96 --epochs 8 --patience 3 --batch_size 4 --d_model 128 --n_layers 2 --n_heads 4 --rank 64 --lr 0.001 --weight_decay 0.0001 --amp 1 --num_workers 0 --plan single --out_dir runs_icdm_psllm_parallel/main96 --dataset ETTh1 --model dlinear --pred_len 96 --llm_name qwen2p5_1p5b --semantic_encoder mlp
+========================================================================================================================
+========================================================================================================================
+RUN: main_ETTh1_model-dlinear_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem1_align1_gate1_llm1_fs1.0_noise0.0_seed42
+device: cuda
+data_root: data_icdm_tsf
+hf_root: /home/tahiti/Malashin_Projects/hf_models
+dataset: ETTh1
+model: dlinear
+llm: qwen2p5_1p5b
+semantic_encoder: mlp
+input_dim: 7 output_dim: 7
+params_total: 18624 params_trainable: 18624
+batches train/val/test: 3000 412 848
+run_dir: runs_icdm_psllm_parallel/main96/main_ETTh1_model-dlinear_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem1_align1_gate1_llm1_fs1.0_noise0.0_seed42
+========================================================================================================================
+epoch 001 | train mse 0.384082 mae 0.427972 | val mse 0.357230 mae 0.396049
+epoch 002 | train mse 0.372653 mae 0.419756 | val mse 0.362509 mae 0.405581
+epoch 003 | train mse 0.372546 mae 0.419814 | val mse 0.356709 mae 0.399002
+epoch 004 | train mse 0.372358 mae 0.419406 | val mse 0.363092 mae 0.404622
+epoch 005 | train mse 0.372622 mae 0.419776 | val mse 0.397050 mae 0.440493
+epoch 006 | train mse 0.372129 mae 0.419381 | val mse 0.360316 mae 0.402698
+early stopping at epoch 6, best_epoch=3
+TEST RESULT
+{
+  "task": "main",
+  "dataset": "ETTh1",
+  "model": "dlinear",
+  "llm_name": "qwen2p5_1p5b",
+  "semantic_encoder": "mlp",
+  "mode": "M",
+  "seq_len": 96,
+  "pred_len": 96,
+  "input_dim": 7,
+  "output_dim": 7,
+  "use_pattern": 1,
+  "use_semantic": 1,
+  "use_align": 1,
+  "use_gate": 1,
+  "use_llm": 1,
+  "fewshot_ratio": 1.0,
+  "noise_std": 0.0,
+  "seed": 42,
+  "best_epoch": 3,
+  "test_mse": 0.4408721510356046,
+  "test_mae": 0.4473325607525009,
+  "test_nmae": 0.5413681858822071,
+  "params_total": 18624,
+  "params_trainable": 18624,
+  "elapsed_sec": 42.98371767997742,
+  "run_dir": "runs_icdm_psllm_parallel/main96/main_ETTh1_model-dlinear_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem1_align1_gate1_llm1_fs1.0_noise0.0_seed42"
+}
+
+========================================================================================================================
+END=2026-05-29T10:11:33.760696
+RETURN_CODE=0

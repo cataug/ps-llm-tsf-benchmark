@@ -1,0 +1,63 @@
+
+========================================================================================================================
+RESTART_APPEND=2026-05-30T19:17:49.791687
+JOB_NO=0097
+MANIFEST_INDEX=96
+NAME=ablation_Electricity_wo_llm_H96
+GPU=0
+EXPECTED_RESULT=runs_icdm_psllm_parallel/ablation/wo_llm/main_Electricity_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem1_align1_gate1_llm0_fs1.0_noise0.0_seed42/result.json
+CMD=/home/tahiti/Malashin_Projects/.venv_a100/bin/python run_icdm_psllm.py --plan single --data_root data_icdm_tsf --hf_root /home/tahiti/Malashin_Projects/hf_models --out_dir runs_icdm_psllm_parallel/ablation/wo_llm --task main --dataset Electricity --mode M --model psllm --llm_name qwen2p5_1p5b --semantic_encoder mlp --seq_len 96 --pred_len 96 --batch_size 2 --epochs 6 --patience 3 --d_model 128 --n_layers 2 --n_heads 4 --rank 64 --lr 0.001 --weight_decay 0.0001 --amp 1 --num_workers 0 --seed 42 --device auto --fewshot_ratio 1.0 --noise_std 0.0 --use_pattern 1 --use_semantic 1 --use_align 1 --use_gate 1 --use_llm 0 --max_train_batches -1 --max_eval_batches -1
+========================================================================================================================
+========================================================================================================================
+RUN: main_Electricity_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem1_align1_gate1_llm0_fs1.0_noise0.0_seed42
+device: cuda
+data_root: data_icdm_tsf
+hf_root: /home/tahiti/Malashin_Projects/hf_models
+dataset: Electricity
+model: psllm
+llm: qwen2p5_1p5b
+semantic_encoder: mlp
+input_dim: 321 output_dim: 321
+params_total: 2152065 params_trainable: 2152065
+batches train/val/test: 9110 1268 2583
+run_dir: runs_icdm_psllm_parallel/ablation/wo_llm/main_Electricity_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem1_align1_gate1_llm0_fs1.0_noise0.0_seed42
+========================================================================================================================
+epoch 001 | train mse 0.342365 mae 0.423604 | val mse 0.301227 mae 0.382765
+epoch 002 | train mse 0.234111 mae 0.346740 | val mse 0.251601 mae 0.345364
+epoch 003 | train mse 0.206072 mae 0.324377 | val mse 0.240083 mae 0.335325
+epoch 004 | train mse 0.191688 mae 0.312589 | val mse 0.237651 mae 0.334636
+epoch 005 | train mse 0.181857 mae 0.304070 | val mse 0.224891 mae 0.323530
+epoch 006 | train mse 0.175636 mae 0.298498 | val mse 0.222611 mae 0.325326
+TEST RESULT
+{
+  "task": "main",
+  "dataset": "Electricity",
+  "model": "psllm",
+  "llm_name": "qwen2p5_1p5b",
+  "semantic_encoder": "mlp",
+  "mode": "M",
+  "seq_len": 96,
+  "pred_len": 96,
+  "input_dim": 321,
+  "output_dim": 321,
+  "use_pattern": 1,
+  "use_semantic": 1,
+  "use_align": 1,
+  "use_gate": 1,
+  "use_llm": 0,
+  "fewshot_ratio": 1.0,
+  "noise_std": 0.0,
+  "seed": 42,
+  "best_epoch": 6,
+  "test_mse": 0.2940715406576054,
+  "test_mae": 0.37891952946718654,
+  "test_nmae": 0.4560671950564616,
+  "params_total": 2152065,
+  "params_trainable": 2152065,
+  "elapsed_sec": 2527.018171787262,
+  "run_dir": "runs_icdm_psllm_parallel/ablation/wo_llm/main_Electricity_model-psllm_llm-qwen2p5_1p5b_sem-mlp_mode-M_L96_H96_pat1_sem1_align1_gate1_llm0_fs1.0_noise0.0_seed42"
+}
+
+========================================================================================================================
+END=2026-05-30T20:00:15.077897
+RETURN_CODE=0
